@@ -1,19 +1,14 @@
-/**
- * includes a shopping cart
- * add productCard components to page
- * 
- * Once a user has submitted their order,
- * the amount on the cart itself should adjust.
- */
-
+import React from "react";
 import NavigationBar from "./NavigationBar";
+import ProductSection from "./ProductSection";
 
-export default function ShopPage(){
-    return(
-        <section>
-            <NavigationBar/>
-            <h1>Shop Page</h1>
-
-        </section>    
-    );
+export default function ShopPage() {
+  return (
+    <section>
+      <NavigationBar />
+      <h1>Shop Page</h1>
+      <ProductSection />
+    </section>
+  );
 }
+
