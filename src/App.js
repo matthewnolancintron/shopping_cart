@@ -1,7 +1,4 @@
 /**
- * 
- * use react router to route between homePage and shopPage
- * 
  * todo: when finished deploy to github pages
  * instructions for depolying react app with client-side routing:
  * https://create-react-app.dev/docs/deployment/#github-pages
@@ -12,17 +9,18 @@
  * https://reactrouter.com/en/main/router-components/router
  */
 
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import HomePage from './components/HomePage';
 import ShopPage from './components/ShopPage';
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
   return (
     <BrowserRouter className="App">
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/ShopPage" element={<ShopPage/>} />
+        <Route path="/Shop" element={<ShopPage/>} />
+        <Route path="/Cart" element={<ShoppingCart/>}/>
       </Routes>
     </BrowserRouter>
   );
