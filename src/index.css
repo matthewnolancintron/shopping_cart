@@ -15,6 +15,24 @@ code {
 /*
   todo add some basic styling to the application 
 */
+.NavigationBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.NavigationItems{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+
 .product-card {
   border: 1px solid #ccc;
   padding: 10px;
