@@ -1,5 +1,12 @@
 import React from "react";
 
+/**
+ * work on add to cart later
+ * will most likely have to adjust the state
+ * and handleQuanitytChange to a component higher up 
+ * the tree.
+ */
+
 export default function ProductCard({ product }) {
 
     const [quantity, setQuantity] = React.useState(1);
