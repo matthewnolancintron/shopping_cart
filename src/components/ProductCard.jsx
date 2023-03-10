@@ -1,20 +1,13 @@
-import React from "react";
-
-/**
- * work on add to cart later
- * will most likely have to adjust the state
- * and handleQuanitytChange to a component higher up 
- * the tree.
- */
+import React, { useContext } from 'react';
+import { CartContext } from '../CartContext';
 
 export default function ProductCard({ product }) {
-
-    const [quantity, setQuantity] = React.useState(1);
-
-    const handleQuantityChange = (event) => {
-        const value = event.target.value ?? parseInt(event.target.value);
-        setQuantity(value);
-      };
+  const { addToCart } = useContext(CartContext);
+  const [quantity, setQuantity] = React.useState(1);
+  const handleQuantityChange = (event) => {
+      const value = event.target.value ?? parseInt(event.target.value);
+      setQuantity(value);
+    };
 
     return (
         <div className="product-card">
@@ -36,7 +29,7 @@ export default function ProductCard({ product }) {
                 value={quantity}
                 onChange={handleQuantityChange}
               />
-              <button>Add to Cart</button>
+               <button onClick={() => addToCart(product,quantity)}>Add to Cart</button>
             </>
           ) : (
             <p className="out-of-stock">Out of Stock</p>
