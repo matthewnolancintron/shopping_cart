@@ -1,14 +1,12 @@
-/**
- * let user navigate between the pages
- * shown on both the homepage and the ShopPage components
- */
-
 import {Link} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { CartContext } from '../CartContext';
 
 export default function NavigationBar(){
+    const { itemsInCart } = useContext(CartContext);
     return(
-        <nav>
-            <ul>
+        <nav className='NavigationBar'>
+            <ul className='NavigationItems'>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -16,7 +14,7 @@ export default function NavigationBar(){
                     <Link to="/Shop">Shop</Link>
                 </li>
                 <li>
-                    <Link to="/Cart">Cart</Link>
+                    <Link to="/Cart">Cart ({itemsInCart.length})</Link>
                 </li>
             </ul>
         </nav>
