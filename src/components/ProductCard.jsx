@@ -1,18 +1,39 @@
-/**
- * Build individual card items 
- * for each of your products.
- * Display an input field on it,
- * which lets a user manually type in how many items they
- * want to buy. Also, add an increment 
- * and decrement button next to it for fine-tuning.
- * You can also display a title for each product as well
- * as an “Add To Cart” button.
- */
+import React from "react";
 
-export default function ProductCard(){
-    return(
-        <div>
-            product card
+export default function ProductCard({ product }) {
+
+    const [quantity, setQuantity] = React.useState(1);
+
+    const handleQuantityChange = (event) => {
+        const value = event.target.value ?? parseInt(event.target.value);
+        setQuantity(value);
+      };
+
+    return (
+        <div className="product-card">
+          <img src={product.image} alt={product.name} />
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+          <p>Price: ${product.price}</p>
+          <p>Category: {product.category}</p>
+          {product.inStock ? (
+            <>
+              <p className="in-stock">In Stock</p>
+              <label htmlFor={`quantity-${product.id}`}>Quantity:</label>
+              <input
+                id={`quantity-${product.id}`}
+                type="number"
+                min="1"
+                max="10"
+                step="1"
+                value={quantity}
+                onChange={handleQuantityChange}
+              />
+              <button>Add to Cart</button>
+            </>
+          ) : (
+            <p className="out-of-stock">Out of Stock</p>
+          )}
         </div>
-    );
+      );
 }

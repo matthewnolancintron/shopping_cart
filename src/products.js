@@ -13,7 +13,7 @@ const products = [
       name: "Product 2",
       description: "This is the second product",
       price: 19.99,
-      image: "https://picsum.photos/300/200?random=2",
+      image: "https://via.placeholder.com/300x200.png?text=Product+2",
       category: "Category B",
       inStock: true
     },

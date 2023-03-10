@@ -15,3 +15,20 @@ code {
 /*
   todo add some basic styling to the application 
 */
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.product-card img {
+  max-width: 100%;
+}
+
+.in-stock {
+  color: green;
+}
+
+.out-of-stock {
+  color: red;
+}
