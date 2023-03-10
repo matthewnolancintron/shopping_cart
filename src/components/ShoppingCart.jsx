@@ -1,19 +1,21 @@
 /**
- *  a user should see a sticky bar 
- * (it can be just a top section as well),
- *  which displays the number of items currently in the cart.
- *  You should also have a button next to it 
- * where you can go to the cart to checkout and pay 
- * (however we are not going to implement this logic here).
+ * have items the were added to cart show on this page.
+ * and a payment option too.
  */
 
+import React from 'react'; 
+import { CartContext } from '../CartContext';
 import NavigationBar from "./NavigationBar";
 
 export default function ShoppingCart(){
+    const { itemsInCart } = React.useContext(CartContext);
     return(
         <section>
         <NavigationBar/>
         <h1>cart</h1>
-    </section>
+        {itemsInCart.map((item)=>{
+            /**todo create itemInCartProductCard component */
+        })}
+        </section>
     );
 }
