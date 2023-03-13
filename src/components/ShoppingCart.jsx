@@ -32,7 +32,7 @@ export default function ShoppingCart(){
         } 
         </ul>
         <br></br>
-        <p> Your total {totalPrice.toFixed(2)}</p>
+        <p> Your total ${totalPrice.toFixed(2)}</p>
         </section>
     );
 }
