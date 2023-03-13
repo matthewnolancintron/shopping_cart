@@ -24,15 +24,13 @@ export default function ShoppingCart(){
 
 
     return(
-        <section>
+        <section className='cartPage'>
         <NavigationBar/>
-        <h1>cart</h1>
-        <ul>
-        {itemsInCart.length == 0 ? <h1>you have no items in your cart</h1> : itemsInCartComponentList
+        <ul className='itemsInCartList'>
+        {itemsInCart.length === 0 ? <h1>you have no items in your cart</h1> : itemsInCartComponentList
         } 
         </ul>
-        <br></br>
-        <p> Your total ${totalPrice.toFixed(2)}</p>
+        <p className='total'> Your total ${totalPrice.toFixed(2)}</p>
         </section>
     );
 }

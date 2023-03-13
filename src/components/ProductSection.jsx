@@ -4,9 +4,9 @@ import products from "../products";
 
 export default function ProductSection() {
   return (
-    <section>
+    <section className="productSection">
       <h2>Products</h2>
-      <ul>
+      <ul className="productList">
         {products.map((product) => (
           <li key={product.id}>
             <ProductCard product={product} />

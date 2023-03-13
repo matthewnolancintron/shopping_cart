@@ -4,9 +4,8 @@ import ProductSection from "./ProductSection";
 
 export default function ShopPage() {
   return (
-    <section>
+    <section className="shopPage">
       <NavigationBar />
-      <h1>Shop Page</h1>
       <ProductSection />
     </section>
   );

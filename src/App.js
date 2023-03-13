@@ -18,7 +18,7 @@ import ShoppingCart from "./components/ShoppingCart";
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter className="App">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/Shop" element={<ShopPage/>}/>
