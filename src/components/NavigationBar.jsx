@@ -14,7 +14,7 @@ export default function NavigationBar(){
                     <Link to="/Shop">Shop</Link>
                 </li>
                 <li>
-                    <Link to="/Cart">Cart ({itemsInCart.length})</Link>
+                    <Link to="/Cart">Cart ({itemsInCart.reduce((accumulator, item) => accumulator + item.quantity,0)})</Link>
                 </li>
             </ul>
         </nav>
