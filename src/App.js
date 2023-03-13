@@ -1,14 +1,3 @@
-/**
- * todo: when finished deploy to github pages
- * instructions for depolying react app with client-side routing:
- * https://create-react-app.dev/docs/deployment/#github-pages
- * 
- * Be aware that the page will stay blank, 
- * unless you provide a basename to the <BrowserRouter />.
- * For a more detailed description, read this part of the:
- * https://reactrouter.com/en/main/router-components/router
- */
-
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { CartProvider } from './CartContext';
 import HomePage from './components/HomePage';
@@ -18,7 +7,7 @@ import ShoppingCart from "./components/ShoppingCart";
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/shopping_cart">
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/Shop" element={<ShopPage/>}/>
