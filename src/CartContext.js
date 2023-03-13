@@ -20,45 +20,11 @@ export const CartProvider = (props) => {
         parseInt(itemsInCart[indexOfnewItemInCart].quantity) + parseInt(amount) : parseInt(amount) + 1 // update the `quantity` key-value pair
       };
 
-      //start here
-      /**
-       * work implementing a total price
-       * need to update when object isn't already in the
-       * cart below
-       * 
-       * also see why total price isn't updating after the first update?
-       * 
-       * need to update shopping cart to display
-       * number of items not based on the number of items in the array
-       * but based on the total quanity of the items in the cart.
-       * 
-       * update the cart page to display a total and a checkout or
-       * payment section then move onto steps 7, 8, 9, 10.
-       * 
-       * could just leave the total price for the cart page
-       * and just display the quanity as is here or for each object
-       * in cart
-       * 
-       * the calculation would only need to take place their and
-       * require less messing with the code here.
-       * 
-       * todo clean up change below and move on to new solution.
-       * 
-       */
-
-      const updatedTotalPriceObject = {
-        ...updatedObjectQuanitity, // copy all the key-value pairs from the original object
-        totalPrice: amount > 1 ?
-         parseFloat(updatedObjectQuanitity.price) * parseInt(updatedObjectQuanitity.quantity) :
-         parseFloat(updatedObjectQuanitity.price) + parseFloat(updatedObjectQuanitity.price) ,
-      }
-
-
       // Create a new array that contains all the objects from the old state array.
       const itemsInCartCopy = [...itemsInCart];
       
       // Replace the old object at that index with the new object.
-      itemsInCartCopy[indexOfnewItemInCart] = updatedTotalPriceObject;
+      itemsInCartCopy[indexOfnewItemInCart] = updatedObjectQuanitity;
       //
       setItemsInCart(itemsInCartCopy);
     };
