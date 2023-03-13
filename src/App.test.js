@@ -15,4 +15,7 @@ test('renders learn react link', () => {
  * since it is an external library and the 
  * developers working on it must have tested 
  * the library already.
+ * 
+ * I don't know what to test so for now I'm 
+ * just leaving this as is.
  */
