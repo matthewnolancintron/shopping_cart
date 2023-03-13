@@ -1,8 +1,3 @@
-/**
- * have items the were added to cart show on this page.
- * and a payment option too.
- */
-
 import React from 'react'; 
 import { CartContext } from '../CartContext';
 import NavigationBar from "./NavigationBar";
@@ -17,6 +12,17 @@ export default function ShoppingCart(){
         </li>
     ));
 
+
+    const totalPrice = 
+    ((
+        //add up each items total price,
+        //which is the quantity of each item 
+        //multiplied by it's price 
+        itemsInCart.reduce((accumulator,item) =>
+        accumulator + (item.quantity*item.price) ,0)
+    ));
+
+
     return(
         <section>
         <NavigationBar/>
@@ -25,6 +31,8 @@ export default function ShoppingCart(){
         {itemsInCart.length == 0 ? <h1>you have no items in your cart</h1> : itemsInCartComponentList
         } 
         </ul>
+        <br></br>
+        <p> Your total {totalPrice.toFixed(2)}</p>
         </section>
     );
 }
